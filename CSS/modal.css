@@ -137,6 +137,21 @@ main {
   font-family: var(--font-slab);
 }
 
+/* Form warnings*/
+.warning{
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14.26px;
+  color: #fe142f;
+  display: none;
+}
+
+.inputInvalid{
+  border-color: #fe142f;
+  border-width: 2px;
+}
+
 /* Modal form */
 
 .button {
