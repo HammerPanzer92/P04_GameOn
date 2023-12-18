@@ -20,7 +20,10 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal form
+/**
+ * Close the modal window
+ */
 function closeModal() {
   modalbg.style.display = "none";
 }
+
