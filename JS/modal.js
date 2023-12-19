@@ -7,6 +7,11 @@ function editNav() {
   }
 }
 
+//Put a max constraint on the birthdate input and setting it to the current date
+const dateInput = document.getElementById('birthdate');
+const dateJour = new Date();
+dateInput.max = dateJour.getFullYear() + "-" + (dateJour.getMonth() + 1) + "-" + dateJour.getDate();
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
