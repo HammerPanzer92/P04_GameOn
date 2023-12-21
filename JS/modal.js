@@ -16,6 +16,8 @@ dateInput.max = dateJour.getFullYear() + "-" + (dateJour.getMonth() + 1) + "-" +
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const validModalBg = document.querySelector(".validModal");
+const validModal_btn = document.getElementById("validModal_btn");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -32,3 +34,16 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+/**
+ * Launch the modal for the valid message
+ */
+function launchValidModal() {
+  validModalBg.style.display = "block";
+}
+
+/**
+ * Close the modal for the valid message
+ */
+function closeValidModal() {
+  validModalBg.style.display = "none";
+}

@@ -1,3 +1,5 @@
+const form = document.querySelector("form");
+
 /**
  * Validate the form data
  * @returns {boolean} true if the form is valid, false otherwise
@@ -26,45 +28,33 @@ function validate() {
     switch (input.type) {
       //For input of type text (corresponding to first and last name field)
       case "text":        
-        if(!checkString(input)){
-          check = false;
-        }
+        check =  checkString(input);
         break;
       
       //For input of type mail (corresponding to the E-mail field)
       case "email":
-        if(!checkMail(input)){
-          check = false;
-        }
+        check = checkMail(input);
         break;
       
       //For input of type date (for the birthdate field)
       case "date":
-        if(!checkDate(input)){
-          check = false;
-        }
+        check = checkDate(input);
         break;
       
       //For input of type number (for the quantity field)
       case "number":
-        if(isNaN(input.value)){
-          check = false;
-        }
+        check = !isNaN(input.value);
         break;
       
       //For input of type radios
       case "radio":
         const listRadios = formData[i].querySelectorAll("input");
-        if(!checkRadios(listRadios)){
-          check = false;
-        }
+        check = checkRadios(listRadios)     
         break;
       
       //For input of type checkbox (only one necessary)
       case "checkbox":
-        if(!input.checked){
-          check = false;
-        }
+        check = input.checked;
         break;
       default:
         break;
@@ -80,3 +70,15 @@ function validate() {
   //If everything has been checked, valid will be true, else it will be false
   return valid;
 }
+
+//Handle the submit event of the form
+form.addEventListener("submit",function (e) {
+  //preventDefault to avoid default behavior (sending the request)
+  e.preventDefault();
+  if(validate()){
+    //We close the form modal to replace it with the confirmation one
+    closeModal();
+    launchValidModal();
+    form.reset();
+  }
+});
