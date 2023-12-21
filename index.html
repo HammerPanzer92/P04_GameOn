@@ -61,6 +61,7 @@
               action="index.html"
               method="get"
               onsubmit="return validate();"
+              novalidate
             >
               <div
                 class="formData">
@@ -73,7 +74,6 @@
                   minlength="2"
                   required
                 /><br>
-                <span class="warning firstWarning">Veuillez entrer 2 caractères ou plus pour le champ du nom.</span>
               </div>
               <div
                 class="formData">
@@ -86,7 +86,6 @@
                   minlength="2"
                   required
                 /><br>
-                <span class="warning lastWarning">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</span>
               </div>
               <div
                 class="formData">
@@ -97,7 +96,6 @@
                   id="email"
                   name="email"
                 /><br>
-                <span class="warning mailWarning">Veuillez entrer une adresse mail valide</span>
               </div>
               <div
                 class="formData">
@@ -108,13 +106,11 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
-                <span class="warning dateWarning">Veuillez entrer une date valide</span>
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-                <span class="warning quantityWarning">Veuillez entrer un nombre valide</span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
@@ -191,7 +187,6 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <span class="warning tournamentWarning">Veuillez sélectionner un lieu</span>
               </div>
 
               <div
@@ -206,7 +201,6 @@
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <span class="warning checkboxWarning">Veuillez accepter les conditions d'utilisation</span>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
@@ -233,6 +227,7 @@
     </footer>
     <script src="./JS/modal.js"></script>
     <script src="./JS/styleForm.js"></script>
+    <script src="./JS/checkForm.js"></script>
     <script src="./JS/validationForm.js"></script>
   </body>
 </html>
