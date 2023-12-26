@@ -544,6 +544,9 @@ footer {
 /*Valid modal*/
 .validModal_content{
   min-height: 737px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .validModal_content.content{
@@ -554,6 +557,7 @@ footer {
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
+  flex-grow: 2;
 }
 
 .validModal p{
@@ -565,6 +569,6 @@ footer {
   line-height: 51.34px;
 }
 
-.validModal_btn{
+.validModal .button{
   margin-top: auto;
 }

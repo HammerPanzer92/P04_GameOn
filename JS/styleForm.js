@@ -5,7 +5,7 @@ const tabWarnings = [
     "Veuillez entrer une adresse mail valide",
     "Veuillez entrer une date valide",
     "Veuillez entrer un nombre valide",
-    "Veuillez sélectionner un lieu",
+    "</br>Veuillez sélectionner un lieu",
     "Veuillez accepter les conditions d'utilisation",
 ];
 
@@ -18,9 +18,13 @@ function createWarning(pos, empty = true) {
     const newWarning = document.createElement("span");
     newWarning.classList.add("warning");
     if(empty){
+      if(pos === 4){
+        newWarning.innerText = "Veuillez entrer un nombre";
+      }else{
         newWarning.innerText = "Ce champ est obligatoire";
+      }        
     }else{
-        newWarning.innerText = tabWarnings[pos];
+        newWarning.innerHTML = tabWarnings[pos];
     }
     formData[pos].appendChild(newWarning);
 }
