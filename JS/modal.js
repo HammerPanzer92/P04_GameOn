@@ -10,7 +10,20 @@ function editNav() {
 //Put a max constraint on the birthdate input and setting it to the current date
 const dateInput = document.getElementById('birthdate');
 const dateJour = new Date();
-dateInput.max = dateJour.getFullYear() + "-" + (dateJour.getMonth() + 1) + "-" + dateJour.getDate();
+
+let monthMax = "";
+if (dateJour.getMonth() < 10){
+  monthMax = '0' + (dateJour.getMonth() + 1);
+}else{
+  monthMax = dateJour.getMonth() + 1;
+}
+
+let jourMax = dateJour.getDate();
+if(dateJour.getDate() < 10){
+  jourMax = "0" + jourMax.toString();
+}
+
+dateInput.max = dateJour.getFullYear() + "-" + monthMax + "-" + jourMax;
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
